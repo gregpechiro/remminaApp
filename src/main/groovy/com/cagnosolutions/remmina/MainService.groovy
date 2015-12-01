@@ -14,6 +14,7 @@ class MainService {
 	Boolean snotra = false
 	Boolean athena = false
 	Boolean apple = false
+	Boolean thor = false
 
 	Map<String, Boolean> connectLoki() {
 		executeCommand("remmina -c /home/athena/.remmina/loki.remmina")
@@ -21,6 +22,7 @@ class MainService {
 		snotra = false
 		athena = false
 		apple = false
+		thor = false
 		loki = true
 		return getStatus()
 	}
@@ -31,6 +33,7 @@ class MainService {
 		loki = false
 		athena = false
 		apple = false
+		thor = false
 		heimdallr = true
 		return getStatus()
 	}
@@ -41,6 +44,7 @@ class MainService {
 		loki = false
 		athena = false
 		apple = false
+		thor = false
 		snotra = true
 		return getStatus()
 	}
@@ -51,6 +55,7 @@ class MainService {
 		loki = false
 		snotra = false
 		apple = false
+		thor = false
 		athena = true
 		return getStatus()
 	}
@@ -61,7 +66,19 @@ class MainService {
 		loki = false
 		snotra = false
 		athena = false
+		thor = false
 		apple = true
+		return getStatus()
+	}
+
+	Map<String, Boolean> connectThor() {
+		executeCommand("remmina -c /home/athena/.remmina/thor.remmina")
+		heimdallr = false
+		loki = false
+		snotra = false
+		athena = false
+		apple = false
+		thor = true
 		return getStatus()
 	}
 
@@ -72,6 +89,7 @@ class MainService {
 		snotra = false
 		athena = false
 		apple = false
+		thor = false
 		return getStatus()
 	}
 
@@ -81,6 +99,7 @@ class MainService {
 		map.put("heimdallr", heimdallr)
 		map.put("snotra", snotra)
 		map.put("apple", apple)
+		map.put("thor", thor)
 		//map.put("athena", athena)
 		map
 	}
