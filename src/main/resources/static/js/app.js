@@ -13,6 +13,7 @@ app.factory('RemminaService', function($resource) {
 app.controller('MainController', function($scope, RemminaService) {
     $scope.sources = RemminaService('/status').get();
     $scope.connect = function(source) {
+		console.log(source);
         RemminaService('/' + source).changeSource().$promise.then(function() {
             $scope.sources = RemminaService('/status').get();
         });

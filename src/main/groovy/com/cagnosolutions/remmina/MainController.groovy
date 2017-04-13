@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
-/**
- * Created by greg on 2/12/15.
- */
 
 @CompileStatic
 @RestController
@@ -42,6 +39,11 @@ class MainController {
 	@RequestMapping(value = "/apple", method = RequestMethod.POST)
 	def connectApple() {
 		status = mainService.connectApple()
+	}
+
+	@RequestMapping(value = "/thor", method = RequestMethod.POST)
+	def connectThor() {
+		status = mainService.connectThor()
 	}
 
 	@RequestMapping(value = "/athena", method = RequestMethod.POST)
